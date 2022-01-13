@@ -1,0 +1,90 @@
+<html>
+<head>
+<h1>Blog</h1>
+<link rel="stylesheet" href="style1.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+var myInput = document.getElementById("email");
+//var letter = document.getElementById("phone");
+var lowerCaseLetters = /[a-z]/g;
+$(document).ready(function(){
+$("#form1").hide();
+});
+$(document).ready(function(){
+$("#subs").click(function(){
+$("#form1").slideToggle();
+});
+});
+function validateForm() {
+var x = document.forms["form1"]["email"].value;
+if(x=="") {
+alert("email must be filled out");
+return false;
+}
+}
+function search_animal() {
+let input = document.getElementById('searchbar').value
+input=input.toLowerCase();
+let x = document.getElementsByClassName('animals');
+for (i = 0; i < x.length; i++) {
+if (!x[i].innerHTML.toLowerCase().includes(input)) {
+x[i].style.display="none";
+}
+else {
+x[i].style.display="list-item";
+}
+}
+}
+</script>
+<style>
+button {
+position: absolute;
+left: 50%;
+display: inline-block;
+font-size: 16px;
+margin: 4px 2px;
+cursor: pointer;
+font-size: 55px;
+padding: 50px 60px;
+}
+</style>
+</head>
+<body>
+<div class="banner" style="padding:15px; text-align:center;">
+<div class="banner-content">
+<h1>Photos</h1>
+</div>
+</div><br><br>
+<img src="https://seashellhotels.net/wpcontent/themes/seashellhotels/images/temp/slider/seashell-hotel-havelock.jpg" alt="beach"
+usemap="#workmap" width=500 height=500>
+<map name="workmap">
+<area shape="rect" coords="34,74,500,350" alt="beach"
+href="https://seashellhotels.net/havelock/">
+</map>
+<img src="https://www.holidify.com/images/cmsuploads/compressed/Baratang-LimestoneCave_20190111134121.jpg" alt="Cave" usemap="#workmap1" width=500 height=500>
+<map name="workmap1">
+<area shape="rect" coords="34,74,500,350" alt="cave"
+href="https://www.google.com/maps/place/Limestone+Cave+Baratang/@12.0959029,92.7
+43298,17z/data=!3m1!4b1!4m5!3m4!1s0x308f4afbac8bd9c7:0xa1e372f97c60eb89!8m2!3d
+12.0959029!4d92.7454867">
+</map><br><br>
+<input id="searchbar" onkeyup="search_animal()" type="text"
+name="search" placeholder="Search activities">
+<!-- ordered list -->
+<ol id='list'>
+<li class="animals"><a href="https://www.ixigo.com/holy-religious-places-in-andamanand-nicobar-islands-lp-1491437">Religion</li>
+<li class="animals" ><a href="https://www.eternalandamans.com/watersports">Sports</li>
+<li class="animals"><a href="https://www.tripadvisor.in/Attractions-g297583-Activitiesc47-Andaman_and_Nicobar_Islands.html">Historical</li>
+</a>
+</ol>
+</input>
+<form id="form1" action="/action_page.php" onsubmit="return validateForm()"
+method="post">
+<b>Email:</b> <input type="email" id="email" name="email">
+<b>Phone: </b><input type="tel" id="phone" name="phone"
+pattern="[0-9]{10}"
+required>
+<input type="submit" value="Submit"> 
+</form>
+<button type="button" id="subs">Subscribe</button>
+</html>

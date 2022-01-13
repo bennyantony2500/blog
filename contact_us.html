@@ -1,0 +1,71 @@
+<html>
+<link rel="stylesheet" href="style1.css">
+<h2>Caution</h2>
+<script>
+function validateForm() {
+var a = document.getElementById("phone").value;
+var b = document.getElementById("name").value;
+if (!a.length) {
+alert("Form number must be filled out");
+return false;
+}else if (!a.match(/^[0-9]+$/)) {
+alert("Form number must be filled with numbers only");
+return false;
+}else if (a.length > 10) {
+alert("Form number must not be greater than 10 character length");
+return false;
+}else if (!b.length) {
+alert("Name must be filled out");
+return false;
+}else if (!b.length>5) {
+alert("Just first name is enough");
+return false;
+}
+}
+function validateForm() {
+var a = document.forms["form1"]["phone"].value;
+var b = document.forms["form1"]["name"].value;
+if (!a.length) {
+alert("Form number must be filled out");
+return false;
+}else if (!a.match(/^[0-9]+$/)) {
+alert("Phone number must be filled with numbers only");
+return false;
+}else if (a.length > 10) {
+alert("Phone number must not be greater than 10 character length");
+return false;
+}
+else if (!b.length) {
+alert("Name must be filled out");
+return false;
+}
+else if (b.length < 3 || b.length > 10) {
+alert("Enter valid name of more than three letters");
+return false;
+}
+}
+</script>
+<iframe src="https://thewire.in/environment/saltwater-crocodiles-in-the-andaman-andnicobar-have-a-pr-problem" style="height:200px;width:1200px" title="Caution"></iframe>
+<body>
+<div class="banner" style="padding:15px; text-align:center;">
+<div class="banner-content">
+<h1>Contact</h1>
+</div>
+</div>
+<body>
+<h3 id="myHeader">Package info</h3>
+<h4 class="package"><a href="https://www.makemytrip.com/support/contactus.php">MakemyTrip-0124 462 8747</h4>
+<h4 class="package"><a href="https://www.goibibo.com/support/">Goibibo-1800 208
+1060</h4>
+<h4 class="package"><a
+href="https://www.coxandkings.com/live/pressroom/index.php?link=Contact_Us">Cox and
+Kings-1800 209 0400</h4>
+</a>
+<form id="form1" action="/action_page.php" onsubmit="return validateForm()"
+method="post">
+<b>Phone: </b><input type="text" id="phone" name="phone"><br><br>
+<b>Name</b> <input type="text" id="name" name="name"><br><br>
+<input type="submit" value="Submit">
+</form>
+</body>
+</html>
